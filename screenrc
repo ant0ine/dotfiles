@@ -1,0 +1,2 @@
+vbell off
+caption always "%{wb}%H|%{-u} %-Lw%{+b by}%n%f %t%{-}%+Lw %=|%D %M %d %c%-0<"
