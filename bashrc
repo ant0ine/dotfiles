@@ -65,9 +65,13 @@ if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
 fi
 
+# 256 colors
+export XTERM=xterm-256color
+
 # dircolors
-export XTERM=xterm-color
-eval `dircolors .dircolors`
+if [ -f ~/.dircolors ]; then
+    eval `dircolors .dircolors`
+fi
 
 # STD VARS
 export EDITOR="vim"

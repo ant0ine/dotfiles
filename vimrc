@@ -1,6 +1,4 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
+set nocompatible " I want Vim
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -16,7 +14,7 @@ endif
 
 set incsearch
 set ruler
-set history=200
+set history=1000
 
 " remember all of these between sessions, but only 10 search terms; also
 " remember info for 10 files, but never any on removable disks, don't remember
@@ -56,6 +54,10 @@ set tabstop=4
 set expandtab
 set autoindent
 set shiftwidth=4
+
+" wildmenu
+"set wildmode=longest:full
+"set wildmenu
 
 " * Text Formatting -- Specific File Formats
 
@@ -99,3 +101,5 @@ autocmd FileType html set formatoptions+=tl
 " for both CSS and HTML, use genuine tab characters for indentation, to make
 " files a few bytes smaller:
 autocmd FileType html,css set noexpandtab tabstop=4
+
+colorscheme desert256
