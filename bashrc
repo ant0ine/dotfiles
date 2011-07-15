@@ -43,7 +43,11 @@ xterm*|rxvt*)
 esac
 
 # some more ls aliases
-alias ls='ls --color'
+if [ $(uname) = Darwin ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
 alias l='ls -lh'
 alias ll='ls -lha'
 alias la='ls -a'
