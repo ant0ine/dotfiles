@@ -75,6 +75,7 @@ augroup filetype
   autocmd BufNewFile,BufRead *.pod set filetype=human
   autocmd BufNewFile,BufRead *.t set filetype=perl
   autocmd BufNewFile,BufRead *.psgi set filetype=perl
+  autocmd BufNewFile,BufRead *.wsgi set filetype=python
 augroup END
 
 " in human-language files, automatically format everything at 72 chars:
