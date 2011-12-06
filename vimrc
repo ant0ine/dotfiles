@@ -103,4 +103,15 @@ autocmd FileType html set formatoptions+=tl
 " files a few bytes smaller:
 autocmd FileType html,css set noexpandtab tabstop=4
 
+" apply the color scheme before hightlight settings
 colorscheme desert256
+
+" trailing whitespace highlighting
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+
