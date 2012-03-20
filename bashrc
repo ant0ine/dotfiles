@@ -64,6 +64,7 @@ export PAGER="less"
 
 # Python
 export PIP_REQUIRE_VIRTUALENV=true
+export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
 
 # my host specific settings
 if [ -f ~/.bash_local_rc ]; then
