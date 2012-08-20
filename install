@@ -1,2 +1,12 @@
 #!/bin/bash
-find . -maxdepth 1 -not -name "install" -not -name ".*" -printf "%f\n" | xargs -t -i% ln -s $PWD/% ~/.%
+
+
+CONF_LIST=`find . -maxdepth 1 -not -name "install" -not -name ".*" -printf "%f\n"`
+
+for CONF in $CONF_LIST; do
+    SRC="$PWD/$CONF"
+    DEST="$HOME/.$CONF"
+    if [ ! -e $DEST ]; then
+        ln -sv $SRC $DEST
+    fi
+done
