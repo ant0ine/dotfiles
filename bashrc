@@ -7,6 +7,11 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
+# support Go
+if [ -d /usr/local/go/bin ] ; then
+    PATH="${PATH}:/usr/local/go/bin"
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
