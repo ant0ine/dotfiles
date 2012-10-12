@@ -103,6 +103,9 @@ autocmd FileType html set formatoptions+=tl
 " files a few bytes smaller:
 autocmd FileType html,css set noexpandtab tabstop=4
 
+autocmd FileType go set softtabstop=8 tabstop=8 shiftwidth=8
+
+
 " apply the color scheme before hightlight settings
 colorscheme desert256
 
