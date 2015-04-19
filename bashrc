@@ -22,9 +22,14 @@ fi
 # 256 colors
 export XTERM=xterm-256color
 
-# dircolors
-if [ -f ~/.dircolors ]; then
-    eval `dircolors .dircolors`
+# ls colors
+if [ $(uname) = Darwin ]; then
+    export LSCOLORS=ExFxCxDxCxegedabagacad
+else
+    # dircolors
+    if [ -f ~/.dircolors ]; then
+        eval `dircolors .dircolors`
+    fi
 fi
 
 # don't put duplicate lines in the history. See bash(1) for more options
