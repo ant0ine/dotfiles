@@ -1,10 +1,15 @@
 #!/bin/bash
 
 
-#CONF_LIST=`find . -maxdepth 1 -not -name "install" -not -name ".*" -printf "%f\n"`
+PLATFORM=`uname`
 
-# works with osx bsd find
-CONF_LIST=`find . -maxdepth 1 -not -name "install" -not -name ".*" -print0 | xargs -0 basename`
+if [[ "$PLATFORM" == "Linux" ]]; then
+    CONF_LIST=`find . -maxdepth 1 -not -name "install" -not -name ".*" -printf "%f\n"`
+elif [[ "$PLATFORM" == "Darwin" ]]; then
+    # works with osx bsd find
+    CONF_LIST=`find . -maxdepth 1 -not -name "install" -not -name ".*" -print0 | xargs -0 basename`
+fi
+
 
 for CONF in $CONF_LIST; do
     SRC="$PWD/$CONF"
